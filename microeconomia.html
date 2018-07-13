@@ -34,18 +34,26 @@
 				<!-- Main -->
 					<div id="main">
 
-						<!-- Post -->
+						<!-- Demanda -->
 							<section class="post">
 								<header class="major">
-									<h1>This is a<br />
-									Generic Page</h1>
-									<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
-									facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
-									amet nullam sed etiam veroeros.</p>
+									<h1>Demanda</h1>
+									<p>Sabendo que as variáveis da demanda são 4 chaves principais: Preço, preferências (gostos), Renda, Preços de Bens Relacionados.</p>
 								</header>
-								<div class="image main"><img src="images/pic01.jpg" alt="" /></div>
-								<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur sapien risus, commodo eget turpis at, elementum convallis enim turpis, lorem ipsum dolor sit amet nullam.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus. Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum.</p>
+								<button id="btnDemandaMaiorPrecoTradicional">Maior o Preço</button> <button id="btnDemandaMenorPrecoTradicional">Menor o Preço</button> <div id="respostaDemandaTradicional"></div>
+
+								<header class="major">
+									<h3>Renda</h3>
+								</header>
+								<button id="btnDemandaMaiorRenda">Maior a Renda</button> <button id="btnDemandaMenorRenda">Menor a Renda</button> <div id="respostaDemandaRenda"></div>
+
+							</section>
+
+							<section class="post">
+								<header class="major">
+									<h1>Elasticidade</h1>
+								</header>
+								<!--<button id="btnDemandaMaiorRenda">Maior a Renda</button> <button id="btnDemandaMenorRenda">Menor a Renda</button> <div id="respostaDemandaRenda"></div>-->
 							</section>
 
 					</div>
@@ -69,6 +77,24 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<script type="text/javascript">
+				$("#btnDemandaMaiorPrecoTradicional").click(function(){
+					$("#respostaDemandaTradicional").html("Demanda Diminui!");
+				});
+				$("#btnDemandaMenorPrecoTradicional").click(function(){
+					$("#respostaDemandaTradicional").html("Demanda Aumenta!");
+				});
+			</script>
+
+			<script type="text/javascript">
+				$("#btnDemandaMaiorRenda").click(function(){
+					$("#respostaDemandaRenda").html("Demanda Aumenta!");
+				});
+				$("#btnDemandaMenorRenda").click(function(){
+					$("#respostaDemandaRenda").html("Demanda Diminui!");
+				});
+			</script>
 
 	</body>
 </html>
