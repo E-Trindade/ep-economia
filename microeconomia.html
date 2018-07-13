@@ -144,26 +144,26 @@
                 <h2>Elasticidade cruzada</h2>
                 <span>Mede o quanto o aumento no preço de um produto X influencia nas vendas de outro produto Y</span>
                 <div>
-                    <var>((Qi - Qf) / Qf) / ((Li - Lf) / Pf)</var>
+                    <var>((Qi<sub>x</sub> - Qf<sub>x</sub>) / Qf<sub>x</sub>) / ((Pi<sub>y</sub> - Pf<sub>y</sub>) / Pf<sub>y</sub>)</var>
                 </div>
                 <div>
-                    <span>Demanda Inicial <var>(Pi)</var></span>
+                    <span> Demanda inicial de x <var>(Qi<sub>x</sub>)</var></span>
                     <input type="text" ng-model="qi" />
                 </div>
                 <div>
-                    <span>Demanda Final <var>(Pf)</var></span>
+                    <span> Demanda final de x <var>(Qf<sub>x</sub>)</var></span>
                     <input type="text" ng-model="qf" />
                 </div>
                 <div>
-                    <span>Renda Inicial <var>(Li)</var></span>
-                    <input type="text" ng-model="li" />
+                    <span>Preço inicial de y <var>(Pi<sub>y</sub>)</var></span>
+                    <input type="text" ng-model="pi" />
                 </div>
                 <div>
-                    <span>Renda Final <var>(Lf)</var></span>
-                    <input type="text" ng-model="lf" />
+                    <span>Preço final de y <var>(Pf<sub>y</sub>)</var></span>
+                    <input type="text" ng-model="pf" />
                 </div>
                 <div>
-                    <strong>Elasticidade de renda: {{((qi - qf) / qf) / ((li - lf) / lf)}}</strong>
+                    <strong>Elasticidade cruzada (x, y): {{((qi - qf) / qf) / ((pi - pf) / pf)}}</strong>
                 </div>
             </form>
         </section>

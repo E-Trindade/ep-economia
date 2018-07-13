@@ -16,6 +16,6 @@ app
     .controller('el_cruz_ctrl', function($scope) {
         $scope.qi = 0
         $scope.qf = 1
-        $scope.li = 0
-        $scope.lf = 1
+        $scope.pi = 0
+        $scope.pf = 1
     })
