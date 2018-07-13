@@ -4,15 +4,17 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html ng-app="app">
 
 <head>
     <title>Microeconomia</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
-    <link href="assets/css/app.css" rel="stylesheet"/>
+    <link href="assets/css/app.css" rel="stylesheet" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+    <script src="app.js"></script>
 </head>
 
 <body class="is-preload">
@@ -80,16 +82,91 @@
             </header>
             <button id="btnDemandaMaiorRenda">Maior a Renda</button> <button id="btnDemandaMenorRenda">Menor a Renda</button>
             <div id="respostaDemandaRenda"></div>
-
         </section>
 
         <section class="post">
             <header class="major">
                 <h1>Elasticidade</h1>
             </header>
-            <!--<button id="btnDemandaMaiorRenda">Maior a Renda</button> <button id="btnDemandaMenorRenda">Menor a Renda</button> <div id="respostaDemandaRenda"></div>-->
+            <form ng-controller="el_dem_ctrl">
+                <h2>Elasticidade de demanda</h2>
+                <span> Representa o quanto a variação do preço de um produto influencia em sua demanda.</span>
+                <div>
+                    <var>((Qi - Qf) / Qf) / ((Pi - Pf) / Pf)</var>
+                </div>
+                <div>
+                    <span>Demanda Inicial <var>(Qi)</var></span>
+                    <input type="text" ng-model="qi" />
+                </div>
+                <div>
+                    <span>Demanda Final <var>(Qf)</var></span>
+                    <input type="text" ng-model="qf" />
+                </div>
+                <div>
+                    <span>Preço Inicial <var>(Pi)</var></span>
+                    <input type="text" ng-model="pi" />
+                </div>
+                <div>
+                    <span>Preço Final <var>(Pf)</var></span>
+                    <input type="text" ng-model="pf" />
+                </div>
+                <div>
+                    <strong>Elasticidade de demanda: {{((qi - qf) / qf) / ((pi - pf) / pf)}}</strong>
+                </div>
+            </form>
+            <form ng-controller="el_ren_ctrl">
+                <h2>Elasticidade de renda</h2>
+                <span> Representa o quanto a variação de renda dos consumidores influencia na demanda do produto.</span>
+                <div>
+                    <var>((Qi - Qf) / Qf) / ((Li - Lf) / Pf)</var>
+                </div>
+                <div>
+                    <span>Demanda Inicial <var>(Pi)</var></span>
+                    <input type="text" ng-model="qi" />
+                </div>
+                <div>
+                    <span>Demanda Final <var>(Pf)</var></span>
+                    <input type="text" ng-model="qf" />
+                </div>
+                <div>
+                    <span>Renda Inicial <var>(Li)</var></span>
+                    <input type="text" ng-model="li" />
+                </div>
+                <div>
+                    <span>Renda Final <var>(Lf)</var></span>
+                    <input type="text" ng-model="lf" />
+                </div>
+                <div>
+                    <strong>Elasticidade de renda: {{((qi - qf) / qf) / ((li - lf) / lf)}}</strong>
+                </div>
+            </form>
+            <form ng-controller="el_cruz_ctrl">
+                <h2>Elasticidade cruzada</h2>
+                <span>Mede o quanto o aumento no preço de um produto X influencia nas vendas de outro produto Y</span>
+                <div>
+                    <var>((Qi - Qf) / Qf) / ((Li - Lf) / Pf)</var>
+                </div>
+                <div>
+                    <span>Demanda Inicial <var>(Pi)</var></span>
+                    <input type="text" ng-model="qi" />
+                </div>
+                <div>
+                    <span>Demanda Final <var>(Pf)</var></span>
+                    <input type="text" ng-model="qf" />
+                </div>
+                <div>
+                    <span>Renda Inicial <var>(Li)</var></span>
+                    <input type="text" ng-model="li" />
+                </div>
+                <div>
+                    <span>Renda Final <var>(Lf)</var></span>
+                    <input type="text" ng-model="lf" />
+                </div>
+                <div>
+                    <strong>Elasticidade de renda: {{((qi - qf) / qf) / ((li - lf) / lf)}}</strong>
+                </div>
+            </form>
         </section>
-
     </div>
 
     <!-- Footer -->
