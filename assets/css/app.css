@@ -1,0 +1,7 @@
+#main>.posts>* {
+    padding: 4rem;
+    width: 50%;
+}
+#main>.posts>* p {
+    text-align: center;
+}

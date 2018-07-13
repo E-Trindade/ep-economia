@@ -163,8 +163,7 @@
 							// Hide panel.
 								$this._hide();
 
-							// Redirect to href.
-								window.setTimeout(function() {
+							// Redirect to href. window.setTimeout(function() {
 
 									if (target == '_blank')
 										window.open(href);

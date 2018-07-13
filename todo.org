@@ -1,0 +1,6 @@
+* Home
+** TODO Nomes e nrs Usp
+** TODO Botão "Simulador Econômico" em tablet/mobile
+* Página Microeconomia
+** TODO Fatores
+* Página Macroeconomia
