@@ -81,6 +81,12 @@
 
         </section>
         <section class="post" ng-controller="dem_btn_ctrl">
+            <h2>Simulador de demanda</h2>
+            <h3>Tipo de bem</h3>
+            <select ng-model="tipo_prod" ng-init="tipo_prod = 1">
+                <option ng-value="1">Bem Normal</option>
+                <option ng-value="-1">Bem Inferior</option>
+            </select>
             <table style="width: 60%">
                 <thead>
                     <tr>
@@ -92,18 +98,45 @@
                 <tbody>
                     <tr>
                         <td>Preço</td>
-                        <td><button ng-click="p=1">+</button></td>
                         <td><button ng-click="p=-1">-</button></td>
-                        <td>{{p == 1? 'Demanda aumenta' : p == -1? 'Demanda Diminui' : ''}}</td>
+                        <td><button ng-click="p=1">+</button></td>
+                        <td>{{p == 1? 'Demanda aumenta' : p == -1? 'Demanda diminui' : ''}}</td>
                     </tr>
                     <tr>
                         <td>Renda</td>
-                        <td><button ng-click="r=1">+</button></td>
                         <td><button ng-click="r=-1">-</button></td>
-                        <td>{{r == 1? 'Demanda aumenta' : r == -1? 'Demanda Diminui' : ''}}</td>
+                        <td><button ng-click="r=1">+</button></td>
+                        <td ng-if="tipo_prod == 1">{{r == 1? 'Demanda aumenta' : r == -1? 'Demanda diminui' : ''}}</td>
+                        <td ng-if="tipo_prod == -1">{{r == 1? 'Demanda diminui' : r == -1? 'Demanda aumenta' : ''}}</td>
                     </tr>
                 </tbody>
             </table>
+
+            <h2>Concorrência</h2>
+            <h3>Tipo de concorrência</h3>
+            <select ng-model="tipo_conc" ng-init="tipo_conc = 1">
+                <option ng-value="1">Substituto</option>
+                <option ng-value="-1">Complementar</option>
+            </select>
+            <table style="width: 60%">
+                <thead>
+                    <tr>
+                        <td>Fator</td>
+                        <td style="text-align:center" colspan="2">Ação</td>
+                        <td style="text-align:left">Efeito</td>
+                        </th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Preço do concorrente</td>
+                        <td><button ng-click="pc=-1">-</button></td>
+                        <td><button ng-click="pc=1">+</button></td>
+                        <td ng-if="tipo_conc == 1">{{pc == 1? 'Sua demanda aumenta' : pc == -1? 'Sua demanda diminui' : ''}}</td>
+                        <td ng-if="tipo_conc == -1">{{pc == 1? 'Sua demanda diminui' : pc == -1? 'Sua demanda aumenta' : ''}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
         </section>
         <!-- Elasticidade -->
         <section class="post">
@@ -185,7 +218,8 @@
                     <input type="text" ng-model="pf" />
                 </div>
                 <div>
-                    <strong>Elasticidade cruzada (x, y): {{((qi - qf) / qf) / ((pi - pf) / pf)}}</strong>
+                    <strong>Elasticidade cruzada (x, y): {{((qi - qf) / qf) / ((pi - pf) / pf)}}</strong> <br>
+                    <strong>Relação entre produtos: {{(((qi - qf) / qf) / ((pi - pf) / pf)) > 0? 'Substitutos' : ((((qi - qf) / qf) / ((pi - pf) / pf))  < 0? 'Complementares' : 'Independentes')}}</strong>
                 </div>
             </form>
         </section>
