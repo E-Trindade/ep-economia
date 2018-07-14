@@ -1,455 +1,199 @@
 <!DOCTYPE HTML>
 <!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+    Massively by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
-	<head>
-		<title>Generic Page - Massively by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<html ng-app="app">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<head>
+    <title>Macroeconomia</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link href="assets/css/app.css" rel="stylesheet" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Simulador Econômico</a>
-					</header>
+<body class="is-preload">
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li><a href="index.html">Integrantes</a></li>
-              <li><a href="enunciado.html">Enunciado</a></li>
-							<li><a href="microeconomia.html">Microeconomia</a></li>
-							<li class="active"><a href="macroeconomia.html">Macroeconomia</a></li>
-						</ul>
-					</nav>
+    <!-- Wrapper -->
+    <!-- <div id="wrapper"> -->
 
-				<!-- Main -->
-					<div id="main">
+    <!-- Header -->
+    <header id="header">
+        <a href="index.html" class="logo">Simulador Econômico</a>
+    </header>
 
-						<!-- Post -->
-						<section class="posts">
-								<article>
-									<header>
-										<h2><a href="#">Economia aberta</h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic02.jpg" alt=""></a>
-									<p>Modelo Mundell-Fleming</p>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date">April 22, 2017</span>
-										<h2><a href="#">Primis eget<br>
-										imperdiet lorem</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic03.jpg" alt=""></a>
-									<p>Hipótese central:
-										pequena economia aberta com mobilidade perfeita de capital.
-										r = r*
-										Equilíbrio no mercado de bens – a curva IS* :
-										Y    C (Y T )  I (r *)  G  NX (e )
-										onde 
-										e  = taxa de câmbio nominal
-										=  moeda nacional por unidade de moeda estrangeira</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date">April 18, 2017</span>
-										<h2><a href="#">Ante mattis<br>
-										interdum dolor</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic04.jpg" alt=""></a>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
-									</ul>
-									<!-- Código "emprestado" do site http://pt.wikipedia.org/wiki/XHTML -->
+    <!-- Nav -->
+    <nav id="nav">
+        <ul class="links">
+            <li><a href="index.html">Integrantes</a></li>
+            <li><a href="microeconomia.html">Microeconomia</a></li>
+            <li class="active"><a href="macroeconomia.html">Macroeconomia</a></li>
+        </ul>
+    </nav>
 
-									<form name="calcform1" method="post" action="">
-									   <fieldset>
-									      <legend>Devin - Calculadora Simples</legend>
+    <!-- Main -->
+    <div id="main">
+        <section class="post">
+            <header class="major">
+                <h1>PIB</h1>
+            </header>
+            <table>
+                <tr>
+                    <th>Consumo</th>
+                    <th>Investimento</th>
+                    <th>Gastos Públicos</th>
+                    <th>Exportações</th>
+                    <th>Importações</th>
+                </tr>
+                <tr>
+                    <td><input type="text" id="pibc" value="1000000"></td>
+                    <td>
+                        <input type="text" id="pibin" value="500000">
+                    </td>
+                    <td>
+                        <input type="text" id="pibg" value="300000">
+                    </td>
+                    <td>
+                        <input type="text" id="pibe" value="46200">
+                    </td>
+                    <td>
+                        <input type="text" id="pibim" value="33890">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" align="center">PIB:<div id="pib"></div></td>
+                    <td align="right"><button id="btnPIB">Calcular</button></td>
+                </tr>
+            </table>
+        </section>
+        <section class="post">
+            <header class="major">
+                <h1>Deflator</h1>
+            </header>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>PIB Nominal</th>
+                    <th>PIB Real</th>
+                    <th>Deflator</th>
+                    <th>Taxa de Inflação</th>
+                </tr>
+                <tr>
+                    <td>Ano 1</td>
+                    <td>
+                        <input type="text" id="pn1" value="46200">
+                    </td>
+                    <td>
+                        <input type="text" id="pr1" value="46200">
+                    </td>
+                    <td>
+                        <div id="d1">100</div>
+                    </td>
+                    <td>
+                        <div id="t1"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ano 2</td>
+                    <td>
+                        <input type="text" id="pn2" value="51400">
+                    </td>
+                    <td>
+                        <input type="text" id="pr2" value="50000">
+                    </td>
+                    <td>
+                        <div id="d2">102.8</div>
+                    </td>
+                    <td>
+                        <div id="t2">2.8</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ano 3</td>
+                    <td>
+                        <input type="text" id="pn3" value="58300">
+                    </td>
+                    <td>
+                        <input type="text" id="pr3" value="52000">
+                    </td>
+                    <td>
+                        <div id="d3">112.1</div>
+                    </td>
+                    <td>
+                        <div id="t3">9.0</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5" align="right"><button id="btnDeflator">Calcular</button></td>
+                </tr>
+            </table>
+        </section>
+    </div>
 
-									      <label for="valor1">Digite o valor <strong>1</strong>:</label>
-									      <input type="text" name="valor1" id="valor1" />
+    <!-- Footer -->
+    <footer id="footer">
+    </footer>
 
-									      <label for="valor2">Digite o valor <strong>2</strong>:</label>
-									      <input type="text" name="valor2" id="valor2" />
+    <!-- Copyright -->
+    <div id="copyright">
+        <ul>
+            <li>&copy; Untitled</li>
+            <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+        </ul>
+    </div>
 
-									      <label for="oper1">Selecione a operação:</label>
-									      <select name="oper1" id="oper1">
-									         <option value="somar">Somar</option>
-									         <option value="subtrair">Subtrair</option>
-									         <option value="multiplicar">Multiplifcar</option>
-									         <option value="dividir">Dividir</option>
-									      </select>
+    </div>
 
-									      <label for="res">Resultado:</label>
-									      <input type="text" name="res1" id="res1" />
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 
-									      <input type="button" value="Calcular" class="botao" onClick="calcular(document.calcform1.oper1.value)"/>
-									   </fieldset>
-									</form>
-								</article>
-								<article>
-									<header>
-										<span class="date">April 14, 2017</span>
-										<h2>Demanda</h2>
-									</header>
-									<form name="demandaForm" method="post" action="">
-									   <fieldset>
-									      <legend>Correlação de Demanda</legend>
+    <script type="text/javascript">
+        function deflator(){
+            var pn1=$("#pn1").val();
+            var pn2=$("#pn2").val();
+            var pn3=$("#pn3").val();
+            var pr1=$("#pr1").val();
+            var pr2=$("#pr2").val();
+            var pr3=$("#pr3").val();
 
-									      <input type="text" name="visor" id="visor" />
-
-									      <table id="demanda">
-									         <tr>
-									            <td><input type="button" name="num9" value="Preço +" onclick="calcEco('preco')" /></td>
-									            <td><input type="button" name="num8" value="Preço -" onclick="calcEco(8)" /></td>
-									            
-									         </tr>
-									         <tr>
-									            <td><input type="button" name="num9" value="Renda +" onclick="calcEco('preco')" /></td>
-									            <td><input type="button" name="num8" value="Preferências" onclick="calcEco(8)" /></td>
-									            <td><input type="button" name="num7" value="Renda -" onclick="calcEco(7)" /></td>
-									            <td><input type="button" name="somar" class=", Preços de Bens Relacionados" value="+" onclick="calcParse('somar')" /></td>
-									         </tr>
-									        
-									         <tr>
-									            <td><input type="button" name="num0" class="num" value="0" onclick="calcEco(0)" /></td>
-									            <td><input type="button" name="igual" class="num" value="=" onclick="calcParse('resultado')" /></td>
-									            <td><input type="button" name="limpar" class="num" value="AC" onclick="calcLimpar()" /></td>
-									            <td><input type="button" name="dividir" class="oper" value="/" onclick="calcParse('dividir')" /></td>
-									         </tr>
-									      </table>
-									   </fieldset>
-									</form>
-
-
-
-									<p></p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
-									</ul>
-
-									
-								</article>
-							
-								<article>
-									<header>
-										<span class="date">April 11, 2017</span>
-										<h2><a href="#">Odio magna<br>
-										sed consectetur</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic06.jpg" alt=""></a>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
-									</ul>
-									<form name="economiaForm" method="post" action="">
-									   <fieldset>
-									      <legend>Devin - Calculadora Complexa</legend>
-
-									      <input type="text" name="visor" id="visor" />
-
-									      <table id="calc">
-									         <tr>
-									            <td><input type="button" name="num9" class="num" value="IS+" onclick="calcEco(9)" /></td>
-									            <td><input type="button" name="num8" class="num" value="8" onclick="calcEco(8)" /></td>
-									            <td><input type="button" name="num7" class="num" value="7" onclick="calcEco(7)" /></td>
-									            <td><input type="button" name="somar" class="oper" value="+" onclick="calcParse('somar')" /></td>
-									         </tr>
-									         <tr>
-									            <td><input type="button" name="num6" class="num" value="6" onclick="calcEco(6)" /></td>
-									            <td><input type="button" name="num5" class="num" value="5" onclick="calcEco(5)" /></td>
-									            <td><input type="button" name="num4" class="num" value="4" onclick="calcEco(4)" /></td>
-									            <td><input type="button" name="subtrair" class="oper" value="-" onclick="calcParse('subtrair')" /></td>
-									         </tr>
-									         <tr>
-									            <td><input type="button" name="num3" class="num" value="3" onclick="calcEco(3)" /></td>
-									            <td><input type="button" name="num2" class="num" value="2" onclick="calcEco(2)" /></td>
-									            <td><input type="button" name="num1" class="num" value="1" onclick="calcEco(1)" /></td>
-									            <td><input type="button" name="multiplicar" class="oper" value="*" onclick="calcParse('multiplicar')" /></td>
-									         </tr>
-									         <tr>
-									            <td><input type="button" name="num0" class="num" value="0" onclick="calcEco(0)" /></td>
-									            <td><input type="button" name="igual" class="num" value="=" onclick="calcParse('resultado')" /></td>
-									            <td><input type="button" name="limpar" class="num" value="AC" onclick="calcLimpar()" /></td>
-									            <td><input type="button" name="dividir" class="oper" value="/" onclick="calcParse('dividir')" /></td>
-									         </tr>
-									      </table>
-									   </fieldset>
-									</form>
+            var d1=(pn1/pr1)*100;
+            d1=d1.toFixed(2);
+            var d2=(pn2/pr2)*100;
+            d2=d2.toFixed(2);
+            var d3=(pn3/pr3)*100;
+            d3=d3.toFixed(2);
 
 
+            $("#d1").html(d1);
+            $("#d2").html(d2);
+            $("#d3").html(d3);
 
+            var t2=d2-d1;
+            t2=t2.toFixed(2);
+            var t3=d3-d2;
+            t3=t3.toFixed(2);
 
+            $("#t1").html("");
+            $("#t2").html(t2+"%");
+            $("#t3").html(t3+"%");
+        }
+        deflator();
+        $("#btnDeflator").click(function() {
+            deflator();
+        });
+    </script>
 
-								</article>
-								<article>
-									<header>
-										<span class="date">April 7, 2017</span>
-										<h2><a href="#">Augue lorem<br>
-										primis vestibulum</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic07.jpg" alt=""></a>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
-									</ul>
-								</article>
-							</section>
-							<section class="post">
-								<header class="major">
-									<span class="date">April 25, 2017</span>
-									<h1>This is a<br />
-									Generic Page</h1>
-									<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
-									facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
-									amet nullam sed etiam veroeros.</p>
-								</header>
-								<div class="image main"><img src="images/pic01.jpg" alt="" /></div>
-								<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur sapien risus, commodo eget turpis at, elementum convallis enim turpis, lorem ipsum dolor sit amet nullam.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus. Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum.</p>
-							</section>
-							<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
+</body>
 
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-						</section>
-						<section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>1234 Somewhere Road #87257<br />
-								Nashville, TN 00000-0000</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">(000) 000-0000</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="#">info@untitled.tld</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
-
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script type="text/javascript">
-			function calcular(oper1) {
-			   var valor1 = document.calcform1.valor1.value;
-			   var valor2 = document.calcform1.valor2.value;
-
-			   if (oper1 == "somar") {
-			      var res1 = parseInt(valor1) + parseInt(valor2);
-			   } else {
-			      if (oper1 == "subtrair") {
-			         var res1 = valor1-valor2;
-			      } else {
-			         if (oper1 == "multiplicar") {
-			            var res1 = valor1*valor2;
-			         } else {
-			            var res1 = valor1/valor2;
-			         }
-			      }
-			   }
-
-			   document.calcform1.res.value = res1;
-			}
-
-		//---
-			// Função que adiciona os números no Visor quando pressionado os botões
-			function calcNum(num) {
-			   if (typeof gvisor == 'undefined') {
-			      document.calcform.visor.value = '';
-			   }
-			   document.calcform.visor.value = document.calcform.visor.value + num;
-			   gvisor = 1;
-			}
-
-			// Função que limpa a calculadora e todas as variáveis existentes.
-			function calcLimpar() {
-			   document.calcform.visor.value = '';
-			   delete gvalor;
-			   delete goper;
-			   delete gvisor;
-			}
-
-			// Função que executa as operações básicas da calculadora
-			function calcOper(oper, valor1, valor2) {
-			   if (oper == "somar") {
-			      var valor = parseFloat(valor1) + parseFloat(valor2);
-			   } else {
-			      if (oper == "subtrair") {
-			         var valor = valor1 - valor2;
-			      } else {
-			         if (oper == "multiplicar") {
-			            var valor = valor1 * valor2;
-			         } else {
-			            var valor = valor1 / valor2;
-			         }
-			      }
-			   }
-
-			   return(valor);
-			}
-
-			// Função do algoritmo de "passagem" das ações do usuário
-			function calcParse(oper) {
-			   var valor = document.calcform.visor.value;
-			   delete gvisor;
-
-			   if (typeof goper != 'undefined' && oper == 'resultado') {
-			      gvalor = calcOper(goper, gvalor, valor);
-			      document.calcform.visor.value = gvalor;
-			      delete oper;
-			      delete gvalor;
-			      return(0);
-			   }
-
-			   if (typeof gvalor != 'undefined') {
-			      gvalor = calcOper(goper, gvalor, valor);
-			      goper = oper;
-			      document.calcform.visor.value = gvalor;
-			   } else {
-			      gvalor = valor;
-			      goper = oper;
-			   }
-
-			}
-
-
-
-
-
-			//
-
-
-						// Função que adiciona os números no Visor quando pressionado os botões
-			function calcEco(num) {
-			   if (typeof gvisor == 'undefined') {
-			      document.economiaForm.visor.value = '';
-			   }
-			   document.economiaForm.visor.value = document.economiaForm.visor.value + num;
-			   gvisor = 1;
-			}
-
-			// Função que limpa a calculadora e todas as variáveis existentes.
-			function calcLimpar() {
-			   document.economiaForm.visor.value = '';
-			   delete gvalor;
-			   delete goper;
-			   delete gvisor;
-			}
-
-			// Função que executa as operações básicas da calculadora
-			function calcOper(oper, valor1, valor2) {
-			   if (oper == "somar") {
-			      var valor = parseFloat(valor1) + parseFloat(valor2);
-			   } else {
-			      if (oper == "subtrair") {
-			         var valor = valor1 - valor2;
-			      } else {
-			         if (oper == "multiplicar") {
-			            var valor = valor1 * valor2;
-			         } else {
-			            var valor = valor1 / valor2;
-			         }
-			      }
-			   }
-
-			   return(valor);
-			}
-
-			// Função do algoritmo de "passagem" das ações do usuário
-			function calcParse(oper) {
-			   var valor = document.economiaForm.visor.value;
-			   delete gvisor;
-
-			   if (typeof goper != 'undefined' && oper == 'resultado') {
-			      gvalor = calcOper(goper, gvalor, valor);
-			      document.economiaForm.visor.value = gvalor;
-			      delete oper;
-			      delete gvalor;
-			      return(0);
-			   }
-
-			   if (typeof gvalor != 'undefined') {
-			      gvalor = calcOper(goper, gvalor, valor);
-			      goper = oper;
-			      document.economiaForm.visor.value = gvalor;
-			   } else {
-			      gvalor = valor;
-			      goper = oper;
-			   }
-
-			}
-			</script>
-			</script>
-
-	</body>
 </html>
