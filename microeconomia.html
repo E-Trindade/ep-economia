@@ -40,6 +40,34 @@
     <!-- Main -->
     <div id="main">
         <section class="post">
+            <header class="major">
+                <h1>Relação Oferta e Demanda</h1>
+            </header>
+            <table style="width: 60%">
+                <thead>
+                    <tr>
+                        <th>Fator</th>
+                        <th style="text-align:center" colspan="2">Ação</th>
+                        <th style="text-align:left">Efeito</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Oferta</td>
+                        <td><button ng-click="o=-1">-</button></td>
+                        <td><button ng-click="o=1">+</button></td>
+                        <td>{{o == 1? 'Preço diminui' : o == -1? 'Preço aumenta' : ''}}</td>
+                    </tr>
+                    <tr>
+                        <td>Demanda</td>
+                        <td><button ng-click="d=-1">-</button></td>
+                        <td><button ng-click="d=1">+</button></td>
+                        <td>{{d == 1? 'Preço aumenta' : d == -1? 'Preço diminui' : ''}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="post">
             <h1>Demanda</h1>
             <p>As principais variáveis que influenciam a demanda são: Preço, preferências (gostos), Renda, Preços de Bens Relacionados.</p>
         </section>
@@ -100,7 +128,7 @@
                         <td>Preço</td>
                         <td><button ng-click="p=-1">-</button></td>
                         <td><button ng-click="p=1">+</button></td>
-                        <td>{{p == 1? 'Demanda aumenta' : p == -1? 'Demanda diminui' : ''}}</td>
+                        <td>{{p == -1? 'Demanda aumenta' : p == 1? 'Demanda diminui' : ''}}</td>
                     </tr>
                     <tr>
                         <td>Renda</td>
@@ -124,7 +152,7 @@
                         <td>Fator</td>
                         <td style="text-align:center" colspan="2">Ação</td>
                         <td style="text-align:left">Efeito</td>
-                        </th>
+                    </tr>
                 </thead>
                 <tbody>
                     <tr>
@@ -136,7 +164,6 @@
                     </tr>
                 </tbody>
             </table>
-
         </section>
         <!-- Elasticidade -->
         <section class="post">
@@ -223,6 +250,7 @@
                 </div>
             </form>
         </section>
+
     </div>
 
     <!-- Footer -->
