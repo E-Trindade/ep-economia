@@ -6,10 +6,10 @@ Ele apresenta:
 - Calculadora de elasticidade
 
 ## Integrantes
-Erica Kanashiro         nUSP: 9761698
-Eder Félix 	            nUSP: 9778515
-Felipe Brito 	          nuSP: 9894460
-Gabriel Suriano         nUSP: 9894411
+- Erica Kanashiro         nUSP: 9761698
+- Eder Félix 	            nUSP: 9778515
+- Felipe Brito 	          nuSP: 9894460
+- Gabriel Suriano         nUSP: 9894411
 
 ## Executar
 - Para executar, abra o arquivo index.html
