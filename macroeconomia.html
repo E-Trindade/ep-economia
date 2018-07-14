@@ -31,6 +31,7 @@
     <nav id="nav">
         <ul class="links">
             <li><a href="index.html">Integrantes</a></li>
+            <li><a href="enunciado.html">Enunciado</a></li>
             <li><a href="microeconomia.html">Microeconomia</a></li>
             <li class="active"><a href="macroeconomia.html">Macroeconomia</a></li>
         </ul>
@@ -66,7 +67,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="4" align="center">PIB:<div id="pib"></div></td>
+                    <td colspan="4" align="center">PIB:<div id="rpib"></div></td>
                     <td align="right"><button id="btnPIB">Calcular</button></td>
                 </tr>
             </table>
@@ -159,6 +160,23 @@
     <script src="assets/js/main.js"></script>
 
     <script type="text/javascript">
+        function pib(){
+            var pibc=$("#pibc").val();
+            var pibin=$("#pibin").val();
+            var pibg=$("#pibg").val();
+            var pibe=$("#pibe").val();
+            var pibim=$("#pibim").val();
+            var pib=parseFloat(pibc)+parseFloat(pibin)+parseFloat(pibg)+(parseFloat(pibe)-parseFloat(pibim));
+            pib=pib.toFixed(2);
+            $("#rpib").html(pib);
+        }
+        pib();
+        $("#btnPIB").click(function() {
+            pib();
+        });
+    </script>
+
+    <script type="text/javascript">
         function deflator(){
             var pn1=$("#pn1").val();
             var pn2=$("#pn2").val();
@@ -166,6 +184,7 @@
             var pr1=$("#pr1").val();
             var pr2=$("#pr2").val();
             var pr3=$("#pr3").val();
+            $("#pib").html("");
 
             var d1=(pn1/pr1)*100;
             d1=d1.toFixed(2);

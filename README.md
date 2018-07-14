@@ -3,6 +3,7 @@
 ## O Projeto
 O trabalho visa dar apoio a tomada decisões, servindo como referência para conceitos básicos de economia.
 Ele apresenta:
+
 - Introdução a fatores que influenciam na demanda, oferta e preço.
 - Calculadora de elasticidade de renda, de preço e elasticidade cruzada de produtos.
 - Calculadora de PIB.
@@ -15,6 +16,5 @@ Ele apresenta:
 - Gabriel Suriano         nUSP: 9894411
 
 ## Executar
-- Para executar, abra o arquivo index.html
-- O projeto também está hospedado em https://e-trindade.github.io/ep-economia
+- O projeto está hospedado em https://e-trindade.github.io/ep-economia
 
