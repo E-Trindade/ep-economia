@@ -2,8 +2,8 @@
 
 O trabalho visa dar apoio a tomada decisões, servindo como referência para conceitos básicos de economia.
 Ele apresenta:
-- Introdução a fatores que influenciam na demanda.
-- Calculadora de elasticidade
+- Introdução a fatores que influenciam na demanda, oferta e preço.
+- Calculadora de elasticidade de renda, de preço e elasticidade cruzada de produtos.
 
 ## Integrantes
 - Erica Kanashiro         nUSP: 9761698
