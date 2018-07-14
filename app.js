@@ -1,6 +1,7 @@
 var app = angular.module('app', [])
 
 app
+    .controller('dem_btn_ctrl', function($scope) {})
     .controller('el_dem_ctrl', function($scope) {
         $scope.qi = 0
         $scope.qf = 1

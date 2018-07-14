@@ -50,8 +50,7 @@
                 </header>
                 <p>O preço do produto/serviço influencia de forma proporcionalmente inversa na demanda</p>
                 <p>
-                    + preço = - demanda <br/>
-                    - preço = + demanda
+                    + preço = - demanda <br/> - preço = + demanda
                 </p>
             </article>
             <article>
@@ -66,8 +65,7 @@
                 </header>
                 <p>A renda dita o quanto o consumidor pode gastar</p>
                 <p>
-                    Para bens normais, + renda = + demanda <br/>
-                    Para bens inferiores, + renda = - demanda
+                    Para bens normais, + renda = + demanda <br/> Para bens inferiores, + renda = - demanda
                 </p>
             </article>
             <article>
@@ -75,15 +73,39 @@
                     <h2>Concorrência</h2>
                 </header>
                 <p>Se refere a bens que competem diretamente
-                <p>Através do cálculo de elasticidade cruzada, é possível saber se dois bens x e y são substitutos ou complementares</p>
-                <p>
-                    Para bens substitutos, + preço<sub>x</sub> = + demanda<sub>y</sub><br/>
-                    Para bens complementares, + preço<sub>x</sub> = - demanda<sub>y</sub>
-                </p>
+                    <p>Através do cálculo de elasticidade cruzada, é possível saber se dois bens x e y são substitutos ou complementares</p>
+                    <p>
+                        Para bens substitutos, + preço<sub>x</sub> = + demanda<sub>y</sub><br/> Para bens complementares, + preço<sub>x</sub> = - demanda<sub>y</sub>
+                    </p>
             </article>
 
         </section>
-        <!-- Demanda -->
+        <section class="post" ng-controller="dem_btn_ctrl">
+            <table style="width: 60%">
+                <thead>
+                    <tr>
+                        <td>Fator</td>
+                        <td style="text-align:center" colspan="2">Ação</td>
+                        <td style="text-align:left">Efeito</td>
+                        </th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Preço</td>
+                        <td><button ng-click="p=1">+</button></td>
+                        <td><button ng-click="p=-1">-</button></td>
+                        <td>{{p == 1? 'Demanda aumenta' : p == -1? 'Demanda Diminui' : ''}}</td>
+                    </tr>
+                    <tr>
+                        <td>Renda</td>
+                        <td><button ng-click="r=1">+</button></td>
+                        <td><button ng-click="r=-1">-</button></td>
+                        <td>{{r == 1? 'Demanda aumenta' : r == -1? 'Demanda Diminui' : ''}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <!-- Elasticidade -->
         <section class="post">
             <header class="major">
                 <h1>Elasticidade</h1>
