@@ -134,6 +134,71 @@
                 </tr>
             </table>
         </section>
+                <section class="post">
+            <header class="major">
+                <h1>IS-LM</h1>
+            </header>
+
+            <table>
+                 <span class="image fit"><img src="images/pic01.jpg" alt="" id="grafico" /></span>
+                 <ul class="actions special">
+                    <li><button id="start">Start</button></li>
+                    <li> <button id="btnCurvaLm">Curva LM</button>
+                         <button id="btnCurvaIs">Curva IS</button>
+                         <button id="btnCurvaIsLm">Curva IS-LM</button>
+                         <button id="btnCurvaIsLeft">IS << </button>
+                         <button id="btnCurvaIsRight">IS >> </button>
+                       
+                    </li>
+                 </ul>
+                 
+               
+                <div id="explain"><p id="pExplain">Explicações</p></div>
+
+                </tr>
+
+                <script type="text/javascript">
+                    document.getElementById('btnCurvaLm').addEventListener("click", function(event) {
+                        (function(event) {
+                            document.getElementById('grafico').src= "images/lm.png";
+                            document.getElementById('pExplain').innerHTML = "A Curva LM representa o equilíbrio particular do Mercado de Ativos. Nesse Modelo, utiliza-se a análise sobre dois Ativos Financeiros (Moeda e Títulos), em que a característica da Moeda é possuir Liquidez Absoluta; não rendendo, pois, Juros Nominais. Já os títulos Rendem Juros, mas têm Baixa Liquidez, se comparado ao Ativo-Moeda. Supondo um dado Estoque de Riqueza Real (W/P) e que as pessoas decidam entre aplicar sua Riqueza entre Moeda e Títulos, a interação entre os Títulos e a Moeda no Mercado de Ativos irá determinar a Taxa de Juros - supondo, claro, que a Base Monetária é mantida num dado nível.";
+                        }).call(document.getElementById('btnCurvaLm'), event);
+                    });
+                    document.getElementById('btnCurvaIs').addEventListener("click", function(event) {
+                        (function(event) {
+                            document.getElementById('grafico').src= "images/is.png";
+                            document.getElementById('pExplain').innerHTML = "A curva IS (Investimento-Poupança, do inglês Investment-Saving) relaciona o nível de Produto/Renda com o nível de taxa de juros, i. Permanecendo constantes as outras variáveis, apresenta a condição de equilíbrio no mercado de bens.  Um aumento na taxa de juros reduz a demanda agregada pelo seu efeito sobre o consumo[1] e investimento. Quando representamos essa relação graficamente encontramos uma inclinação decrescente, conhecida como função IS.";
+                        }).call(document.getElementById('btnCurvaIs'), event);
+                    });
+                    document.getElementById('btnCurvaIsLm').addEventListener("click", function(event) {
+                        (function(event) {
+                            document.getElementById('grafico').src= "images/is_lm_0.png";
+                            document.getElementById('pExplain').innerHTML = "A Oferta de Moeda é uma Variável Exógena determinada pelas Autoridades Monetárias e pelos Bancos Comerciais. A Demanda por Moeda irá depender do \"Motivo Transação\" e do \"Motivo Especulação\" (ou de portfólio), respectivamente. Ou seja: L(r,Y)";
+                        }).call(document.getElementById('btnCurvaIsLm'), event);
+                    });
+                     document.getElementById('btnCurvaIsLeft').addEventListener("click", function(event) {
+                        (function(event) {
+                            document.getElementById('grafico').src= "images/is_lm_left.png";
+                            document.getElementById('pExplain').innerHTML = "⬇️(PIB, Y) e ⬇️️taxa de juro (i)";
+                        }).call(document.getElementById('btnCurvaIsLeft'), event);
+                    });
+                     document.getElementById('btnCurvaIsRight').addEventListener("click", function(event) {
+                        (function(event) {
+                            document.getElementById('grafico').src= "images/is_lm_right.png";
+                            document.getElementById('pExplain').innerHTML = "⬆️(PIB, Y) e ⬆️taxa de juro (i)";
+                        }).call(document.getElementById('btnCurvaIsRight'), event);
+                    });
+                    document.getElementById('start').addEventListener("click", function(event) {
+                        (function(event) {
+                            document.getElementById('grafico').src= "images/pic01.jpg";
+                            document.getElementById('pExplain').innerHTML = "";
+
+                        }).call(document.getElementById('start'), event);
+                    });
+                                   
+                </script>
+            </table>
+        </section>
     </div>
 
     <!-- Footer -->
